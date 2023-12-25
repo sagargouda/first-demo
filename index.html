@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>NEW EXPERIMENT</title>
+</head>
+
+<body>
+
+ <form onsubmit="saveToLocal(event)">
+  <label>Choose Expense Amount</label>
+  <input id="amount" type="text" name="amount">
+  <label>Choose Description</label>
+  <input id="des" type="text" name="des">
+  <label>Choose a category</label>
+  <select name="cat" id="cat">
+   <option value="fuel">fuel</option>
+   <option value="movie">movie</option>
+   <option value="party">party</option>
+   <option value="water">water</option>
+  </select>
+  <button>Submit</button>
+ </form>
+ <ul id="listhere">
+
+ </ul>
+
+ <script src="index.js"></script>
+
+</body>
+
+</html>
