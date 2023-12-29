@@ -7,8 +7,8 @@ let list = document.getElementById("list");
 
 form.addEventListener("submit", addExpenses);
 
-function addExpenses(e) {
-  e.preventDefault();
+function addExpenses(event) {
+  event.preventDefault();
 
   //?? for adding data we create li
   let li = document.createElement("li");
