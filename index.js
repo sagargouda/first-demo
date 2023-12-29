@@ -10,7 +10,7 @@ form.addEventListener("submit", addExpenses);
 function addExpenses(e) {
   e.preventDefault();
 
-  //adding the data to li
+  //?? for adding data we create li
   let li = document.createElement("li");
   li.className = "expenses";
   var userData = document.createTextNode(
@@ -18,7 +18,7 @@ function addExpenses(e) {
   );
   li.appendChild(userData);
 
-  //adding buttons
+  //?? next we create buttons and add to it
   let dltBtn = document.createElement("button");
   dltBtn.className = "deleteData";
   dltBtn.appendChild(document.createTextNode("Delete Exepenses"));
@@ -28,10 +28,10 @@ function addExpenses(e) {
   editBtn.appendChild(document.createTextNode("Edit Expenses"));
   li.appendChild(editBtn);
 
-  //append li to ul
+  //?? we append it to ul element
   list.appendChild(li);
 
-  //Storing info in local storage making the description as unique key
+  //?? i made description as unique and we store it in local stoarge
   let expenseAmount = amount.value;
   let expenseCategory = options.value;
   let expenseDescription = description.value;
@@ -42,14 +42,14 @@ function addExpenses(e) {
   };
   localStorage.setItem(input.expenseDescription, JSON.stringify(input));
 
-  //to delete data from screen and local storage
+  //??t when i delete something on click
   var parentEle = document.getElementById("list");
   dltBtn.onclick = () => {
     localStorage.removeItem(input.expenseDescription);
     parentEle.removeChild(li);
   };
 
-  //to edit data
+  //?? when i want to edit something on click
   var parentEle = document.getElementById("list");
   editBtn.onclick = () => {
     amount.value = input.expenseAmount;
@@ -59,7 +59,7 @@ function addExpenses(e) {
     parentEle.removeChild(li);
   };
 
-  //to empty the fields again after data has been submitted
+  //?? we have to empty the fierld again
   amount.value = "";
   description.value = "";
 }
